@@ -6,10 +6,18 @@ It is directly based on the NETWAYS implementation at https://github.com/NETWAYS
 
 ## Installation:
 
-Install the plugin with ``pip install pretix-net-mail``.
+Run the following commands to install the plugin:
+```bash
+cd /pretalx/src
+git clone https://github.com/kongr45gpen/pretix-email-templates.git
+cd pretix-email-templates
 
-Then reconfigure Pretix with the commands ``python -m pretix rebuild && python migrate``.
+# For production
+pip install -e .
 
-Then restart the server with ``systemctl restart pretix-web pretix-worker`` (depending on the installation)
+# For development
+python setup.py develop
 
-
+python -m pretix rebuild
+systemctl restart pretix-web pretix-worker # depending on the installation
+```
